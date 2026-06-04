@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
+<h1>Lista de Sites</h1>
+<ul>
+    {% for site in sites %}
+    <li><a href="/sites/{{ site['siteID'] }}/">{{ site['name'] }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

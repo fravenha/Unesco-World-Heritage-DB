@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
+<h1>Patrimónios que pertencem a mais que um país</h1>
+<ul>
+    {% for site in sites %}
+    <li>
+        <strong>{{ site['name'] }}</strong>: {{site['Number of Countries']}}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

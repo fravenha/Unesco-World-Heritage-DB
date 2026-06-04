@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            background-color: rgb(217, 235, 202); /* Background color */
+            color: rgb(12, 4, 4); /* Text color */
+            font-size: 16px; /* Comfortable text size */
+            line-height: 1.6; /* Better line spacing */
+            text-align: center; /* Center-align text for uniformity */
+            margin: 0; /* Remove default browser margin */
+            padding: 0; /* Remove default browser padding */
+        }
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Início</a> |
+            <a href="/sites/">Sites</a> |
+            <a href="/regions/">Regiões</a> |
+            <a href="/states/">Estados</a> |
+            <a href="/criterias/">Critérios</a> |
+            <a href="/risks/">Riscos</a> |
+            <a href="/selections/">Seleções</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>World Heritage Database © 2024</p>
+    </footer>
+</body>
+</html>
+

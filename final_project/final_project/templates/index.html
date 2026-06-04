@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="centralized">
+    
+    <style>
+        li {
+            list-style-type: none;
+        }
+    </style>
+    
+    <h1>Estatísticas do Banco de Dados</h1>
+    
+        <li>Sites: {{ stats['n_sites'] }}</li>
+        <li>Regiões: {{ stats['n_regions'] }}</li>
+        <li>Estados: {{ stats['n_states'] }}</li>
+        <li>Critérios: {{ stats['n_criteria'] }}</li>
+        <li>Riscos: {{ stats['n_risks'] }}</li>
+        <li>Seleções: {{ stats['n_selections'] }}</li>
+    
+    <h1>Perguntas</h1>
+    <p>Explore as informações disponíveis respondendo às seguintes perguntas:</p>
+
+    <li><a href="/questions/1/">Listar todos os anos em que uma primeira inscrição foi feita</a></li>
+    <li><a href="/questions/2/Europa/">Listar patrimónios de uma região específica (Exemplo: Europe and North America)</a></li>
+    <li><a href="/questions/3/">Mostrar os patrimónios que pertencem a mais que um país</a></li>
+    <li><a href="/questions/4/">Critérios associados a um património</a></li>
+    <li><a href="/questions/5/">Critérios mais utilizados na classificação dos patrimónios</a></li>
+    <li><a href="/questions/6/">Lista de patrimónios que já estiveram em risco</a></li>
+    <li><a href="/questions/7/">Área considerado património por região</a></li>
+    <li><a href="/questions/8/">Patrimónios selecionados pelos mesmos critérios</a></li>
+    <li><a href="/questions/9/">Listar patrimónios com riscos em 2002</a></li>
+    <li><a href="/questions/10/">Patrimónios que foram selecionados em 2024</a></li>
+</div>
+{% endblock %}

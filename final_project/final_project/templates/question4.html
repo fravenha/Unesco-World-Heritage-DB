@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
+<h1>Critérios associados a um Património</h1>
+<ul>
+    {% for site in sites %}
+    <li>
+        <strong>{{ site['name'] }}</strong>: {{ site['criteria_txt'] }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

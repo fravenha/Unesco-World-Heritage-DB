@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Critérios mais utilizados</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Critério</th>
+            <th>Descrição</th>
+            <th>Número de Patrimónios</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in criteria %}
+        <tr>
+            <td>{{ item['sigla']}}</td>
+            <td>{{ item['description'] }}</td>
+            <td>{{ item['num_sites'] }}<br></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

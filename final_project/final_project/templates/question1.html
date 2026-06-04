@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
+<h1>Lista de Anos</h1>
+<ul>
+    {% for year in years %}
+    <li>
+        {{ year['year_inscribed'] }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

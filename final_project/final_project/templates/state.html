@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
+
+<h1>{{ state['name'] }}</h1>
+<p>ISO Code: {{ state['iso_code'] }}</p>
+<p>UNDP Code: {{ state['udnp_code'] }}</p>
+<h2>Sites Associados</h2>
+<ul>
+    {% for site in sites %}
+    <li><a href="/sites/{{ site['siteID'] }}/">{{ site['name'] }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

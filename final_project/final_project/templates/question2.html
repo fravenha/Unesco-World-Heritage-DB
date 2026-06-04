@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
+<h1>Patrimónios na Região: {{ region_name }}</h1>
+<ul>
+    {% for site in sites %}
+    <li>{{ site['name'] }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

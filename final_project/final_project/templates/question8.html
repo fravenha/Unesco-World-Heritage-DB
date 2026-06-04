@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
+<h1>Patrimónios selecionados pelos mesmos Critérios</h1>
+<ul>
+    {% for pair in common_sites %}
+    <li>{{ pair['site_a'] }} e {{ pair['site_b'] }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

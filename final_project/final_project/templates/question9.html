@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
+<h1>Patrimônios em risco em 2002</h1>
+
+<ul>
+    {% for site in sites %}
+        <li><strong>Region:</strong> {{ site['Region'] }} | <strong>Name:</strong> {{ site['name'] }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
+<h1>Lista de Critérios</h1>
+<ul>
+    {% for criteria in criterias %}
+    <li><strong>{{ criteria['sigla'] }}</strong>: {{ criteria['description'] }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

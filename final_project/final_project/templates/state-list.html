@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Lista de Estados</h1>
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+<ul>
+    {% for state in states %}
+    <li><a href="/states/{{ state['stateID'] }}/">{{ state['name'] }}</a> 
+    (ISO: {{ state['iso_code'] }}, UNDP: {{ state['udnp_code'] }})</li>
+    {% endfor %}
+</ul>
+{% endblock %}

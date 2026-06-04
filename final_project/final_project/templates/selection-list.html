@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Lista de Seleções</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Site ID</th>
+            <th>Ano Inscrito</th>
+            <th>Justificativa</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for selection in selections %}
+        <tr>
+            <td>{{ selection['selectionID'] }}</td>
+            <td><a href="/sites/{{ selection['siteID'] }}/">{{ selection['siteID'] }}</a></td>
+            <td>{{ selection['year_inscribed'] }}</td>
+            <td>{{ selection['justification'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+    
+    table {
+        margin: 0 auto; /* Centers the table horizontally */
+        border-collapse: collapse; /* Ensures no extra space between table borders */
+    }
+    
+    th, td {
+        text-align: center; /* Centers text in the table cells */
+        padding: 10px; /* Adds some padding for better readability */
+    }
+    
+    th {
+        font-weight: bold; /* Highlights the table headers */
+    }
+</style>
+
+
+<h1>Área hectares de cada Região que é considerado Património</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Região</th>
+            <th>Área Máxima (hectares)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for area in areas %}
+        <tr>
+            <td>{{ area['region_name'] }}</td>
+            <td>{{ area['max_area'] or 'N/A' }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

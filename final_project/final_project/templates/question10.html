@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
+<h1>Patrimônios que foram selecionados em 2024</h1>
+
+<ul>
+    {% for site in sites %}
+        <li>{{ site['name'] }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

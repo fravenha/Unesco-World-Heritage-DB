@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
+<h1>Região: {{ region['name'] }}</h1>
+<h2>Estados Associados</h2>
+<ul>
+    {% for state in states %}
+    <li><a href="/states/{{ state['stateID'] }}/">{{ state['name'] }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

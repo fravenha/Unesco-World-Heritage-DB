@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    table {
+        margin: 0 auto; /* Centers the table horizontally */
+        border-collapse: collapse; /* Ensures no extra space between table borders */
+        width: 80%; /* Optional: Adjusts the width of the table for better alignment */
+    }
+
+    th, td {
+        text-align: center; /* Centers text in table cells */
+        padding: 10px; /* Adds padding for better readability */
+        border: 1px solid #ddd; /* Adds a border for a neat look */
+    }
+
+    th {
+        background-color: #f4f4f4; /* Optional: Adds a subtle background to headers */
+        font-weight: bold; /* Highlights the table headers */
+    }
+
+    h1 {
+        text-align: center; /* Centers the heading text */
+    }
+</style>
+
+<h1>Lista de Riscos</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Ano</th>
+            <th>Início</th>
+            <th>Fim</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for risk in risks %}
+        <tr>
+            <td>{{ risk['riskID'] }}</td>
+            <td>{{ risk['type'] }}</td>
+            <td>{{ risk['year'] or 'N/A' }}</td>
+            <td>{{ risk['period_start'] or 'N/A' }}</td>
+            <td>{{ risk['period_end'] or 'N/A' }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

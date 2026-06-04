@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+
+<h1>{{ site['name'] }}</h1>
+<p>{{ site['description'] }}</p>
+<p>Coordenadas: ({{ site['latitude'] }}, {{ site['longitude'] }})</p>
+<p>Área (em hectares): {{ site['area_hectares'] }}</p>
+
+<h2>Regiões</h2>
+<ul>
+    {% for region in regions %}
+    <li>{{ region['name'] }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Critérios</h2>
+<ul>
+    {% for criteria in criterias %}
+    <li><strong>{{ criteria['sigla'] }}</strong>: {{ criteria['description'] }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
